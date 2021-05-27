@@ -10,6 +10,7 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setLeagues(data.countrys))
     }, [])
+    
     const headingStyle = {
         textAlign: 'center',
         height: '250px',
@@ -23,12 +24,15 @@ const Home = () => {
     return (
         <div>
             <div className="container">
+
                 <h1 style={headingStyle}>Legendary Leagues</h1>
+
                 <div className="row">
                     {
                         leagues.map(league => <League key={league.idLeague} league={league} />)
                     }
                 </div>
+
             </div>
         </div>
     );

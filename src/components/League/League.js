@@ -10,7 +10,7 @@ const League = (props) => {
     const history = useHistory()
     return (
         <div className='col'>
-            <Card className="m-3 p-4 shadow" style={{ width: '18rem' }}>
+            <Card className="m-3 p-4 shadow text-dark" style={{ width: '18rem' }}>
                 <Card.Img variant="top" className="container-fluid" src={strBadge} />
                 <Card.Body>
                     <Card.Title>{strLeague}</Card.Title>

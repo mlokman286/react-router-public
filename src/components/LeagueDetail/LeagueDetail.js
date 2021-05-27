@@ -11,6 +11,7 @@ const LeagueDetail = () => {
     const { idLeague } = useParams()
 
     const [league, setLeague] = useState({})
+
     useEffect(() => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${idLeague}`
         fetch(url)
@@ -41,29 +42,35 @@ const LeagueDetail = () => {
             <div style={{ borderRadius: '20px' }} className='bg-primary text-light container p-3'>
 
                 <div className='row'>
+
                     <div className='col-md-6'>
                         <h2>{strLeague}</h2>
-                        <div className=''>
+                        <div>
                             <p><FontAwesomeIcon icon={faSearchLocation} /> Founded: {dateFirstEvent}</p>
                             <p><FontAwesomeIcon icon={faFlag} /> Country: {strCountry}</p>
                             <p><FontAwesomeIcon icon={faFutbol} /> Sport Type: {strSport}</p>
                             <p><FontAwesomeIcon icon={strGender === "Male" ? faMale : faFemale} /> Gender: {strGender}</p>
                             <br />
+
                             <Button onClick={() => history.push('/')} variant="contained" color="secondary">
                                 <ArrowBackIcon /> Back to Home
                             </Button>
                         </div>
                     </div>
+
                     <div className='col-md-6'>
                         <img className='container-fluid' src={strGender === "Male" ? imgMale : imgFemale} alt="" />
                     </div>
+
                 </div>
             </div>
             <br />
+
             <div className='container'>
                 <p>
                     {strDescriptionEN}
                 </p>
+
                 {/* social icons */}
                 <div className='text-center'>
                     <h1 >
@@ -73,7 +80,6 @@ const LeagueDetail = () => {
                     </h1>
                 </div>
             </div>
-
 
         </div>
     );

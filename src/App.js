@@ -11,8 +11,10 @@ import LeagueDetail from './components/LeagueDetail/LeagueDetail';
 function App() {
   return (
     <div>
+
       <Router>
         <Header />
+
         <Switch>
           <Route exact path="/">
             <Home />
@@ -21,7 +23,9 @@ function App() {
             <LeagueDetail />
           </Route>
         </Switch>
+
       </Router>
+
     </div>
   );
 }
